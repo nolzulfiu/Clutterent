@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="onClick"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".HomeScreen"
+        tools:layout_editor_absoluteY="81dp"
+        tools:showIn="@layout/activity_home_screen">
+
+        <SearchView
+            android:id="@+id/searchBar"
+            android:layout_width="302dp"
+            android:layout_height="41dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toStartOf="@+id/notificationButton"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </SearchView>
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="65dp"
+            android:layout_height="69dp"
+            android:background="@android:color/background_light"
+            android:contentDescription="Notification Button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            app:srcCompat="@drawable/ic_notifictions" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/menuTabs"
+            android:layout_width="361dp"
+            android:layout_height="67dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/homeTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_home" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/savedTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_saved"
+                android:onClick="SavedTabOnClick" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/addNewTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_add_new" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/listingsTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_listings" />
+
+            <android.support.design.widget.TabItem
+                android:id="@+id/profileTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_person_not_selected" />
+        </android.support.design.widget.TabLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="342dp"
+            android:layout_height="416dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/menuTabs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBar">
+
+            <android.support.v7.widget.GridLayout
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                app:columnCount="2"
+                app:rowCount="2"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="161dp">
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher"
+                    tools:layout_editor_absoluteX="242dp"
+                    tools:layout_editor_absoluteY="131dp" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher"
+                    tools:layout_editor_absoluteX="38dp"
+                    tools:layout_editor_absoluteY="92dp" />
+            </android.support.v7.widget.GridLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.DrawerLayout>
